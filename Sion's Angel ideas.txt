@@ -1,0 +1,50 @@
+ISSUES:
+
+mrX is showing on the map almost every round it seems.
+
+Seems like sometimes when a player makes a move with a train or bus, mrX still gets a taxi ticket from them not a train or bus.
+
+Game crashes when mrX makes a single move (sometimes) but not when he makes a double.
+
+When no AI is chosen, mrXs move is skipped apart from the first round.
+
+When mrX has no train, bus or taxi tickets but DOES have a secret ticket it should not crash but it currently does.
+
+
+
+IDEAS:
+
+Learn choke points or important locations on the map.
+
+Use lowest priority tickets first. E.g use taxi instead of bus if possible.
+
+Take into consideration the detectives tickets.
+
+Use double moves on round before reveal rounds. //Isn't it on the reveal round, so it reveals first, then jumps to unknown location.
+
+If we look 3 moves ahead and each player has on average about 5 possible moves then theres 125 possible combinations of moves for all 5 players in just 3 rounds. (5 * 5^3).
+
+I guess our aim is to keep mrX as far as possible from all of the detectives?
+
+If a players distance is further than a certain amount then we should ignore them beacause if we are just trying to get as far away from everyone as possible then
+we will just end up in a corner.
+
+We could also not ignore them but just say that the further away a distance is, the less it contributes to the score of the move. If a move puts you from
+20 spaces away down to 18 then its no big deal. If you are very close to a player then moving away from them is a big priority and a move moving away from
+them would get more points.
+
+btw just thought, mrX cant make a pass move but he could just double move back to his position.
+
+
+
+TO DO:
+
+Fix issues with main game.
+
+Finish mrXScore function which will basically score mrXs current position.
+
+Learn how to use factories to begin to implement the minimax algorithm.
+
+Then implement minimax that looks however many moves ahead and returns the best move based on the scoring system.
+
+Then implement alpha-beta pruning that prunes the minimax tree.
